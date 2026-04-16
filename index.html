@@ -3,47 +3,92 @@
 <head>
   <meta charset="UTF-8">
   <title>Сектор-17</title>
-  <link rel="stylesheet" href="style.css">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial;
+      color: white;
+      background: #0a0a0a;
+    }
+
+    header {
+      text-align: center;
+      padding: 60px;
+      background: #111;
+      border-bottom: 3px solid red;
+    }
+
+    h1 {
+      color: red;
+      letter-spacing: 5px;
+    }
+
+    .panel {
+      max-width: 700px;
+      margin: 20px auto;
+      padding: 20px;
+      background: #151515;
+      border-left: 4px solid red;
+      text-align: center;
+    }
+
+    button {
+      display: block;
+      margin: 10px auto;
+      padding: 10px;
+      background: black;
+      color: white;
+      border: 1px solid red;
+      cursor: pointer;
+      width: 200px;
+    }
+
+    button:hover {
+      background: red;
+    }
+  </style>
+
 </head>
 <body>
 
 <header>
   <h1>СЕКТОР-17</h1>
-  <p class="subtitle">ты уже внутри</p>
 </header>
 
 <main>
 
   <section class="panel">
-    <h2>Объект</h2>
-
-    <p>
-      <b>Сектор-17 — закрытая зона катастрофы.</b><br>
-      Доступ запрещён. Любое проникновение считается смертельно опасным.
-    </p>
-
-    <p>
-      После провала проекта «Резонанс» территория перестала подчиняться
-      нормальным законам физики.
-    </p>
-  </section>
-
-  <section class="panel">
     <h2>Выбор фракции</h2>
 
-    <button onclick="playSound(); goFaction('skitalec')">Скитальцы</button>
-    <p class="faction-desc">Скитальцы — выживание и исследование</p>
+    <button onclick="chooseFaction('Скитальцы')">Скитальцы</button>
+    <button onclick="chooseFaction('Падальщики')">Падальщики</button>
+    <button onclick="chooseFaction('Гвардия')">Секторная Гвардия</button>
 
-    <button onclick="playSound(); goFaction('padalshik')">Падальщики</button>
-    <p class="faction-desc">Падальщики — власть и ресурсы</p>
-
-    <button onclick="playSound(); goFaction('gvardia')">Секторная Гвардия</button>
-    <p class="faction-desc">Секторная Гвардия — контроль и зачистки</p>
-
+    <p id="result">...</p>
   </section>
 
 </main>
 
-<script src="script.js"></script>
+<script>
+  function chooseFaction(faction) {
+    let text = "";
+
+    if (faction === "Скитальцы") {
+      text = "Ты выбрал путь выживания и исследования.";
+    }
+
+    if (faction === "Падальщики") {
+      text = "Ты выбрал силу и контроль ресурсов.";
+    }
+
+    if (faction === "Гвардия") {
+      text = "Ты выбрал порядок и контроль Сектора.";
+    }
+
+    document.getElementById("result").innerText = text;
+  }
+</script>
+
 </body>
 </html>
