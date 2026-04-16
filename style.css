@@ -1,21 +1,31 @@
 body {
   margin: 0;
   font-family: Arial;
-  background: #0a0a0a;
   color: white;
+  background: #0a0a0a;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
 }
 
+/* Шапка */
 header {
   text-align: center;
   padding: 70px 20px;
   background: #111;
   border-bottom: 3px solid red;
+  animation: pulse 1.5s infinite;
 }
 
 h1 {
   color: red;
+  letter-spacing: 5px;
+  animation: flicker 2s infinite;
 }
 
+.subtitle {
+  color: #aaa;
+}
+
+/* Панели */
 .panel {
   max-width: 800px;
   margin: 20px auto;
@@ -24,11 +34,38 @@ h1 {
   border-left: 4px solid red;
 }
 
+/* Кнопки */
 button {
-  margin: 5px;
+  display: block;
+  margin: 10px auto;
   padding: 10px;
   background: black;
   color: white;
   border: 1px solid red;
   cursor: pointer;
+  width: 200px;
+}
+
+button:hover {
+  background: red;
+}
+
+/* Описание фракций */
+.faction-desc {
+  font-size: 14px;
+  color: #aaa;
+  margin-bottom: 15px;
+}
+
+/* Анимации */
+@keyframes flicker {
+  0% { opacity: 1; }
+  50% { opacity: 0.6; }
+  100% { opacity: 1; }
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 5px red; }
+  50% { box-shadow: 0 0 20px red; }
+  100% { box-shadow: 0 0 5px red; }
 }
