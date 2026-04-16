@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Фракция</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>ФРАКЦИЯ</h1>
+</header>
+
+<main>
+
+  <section class="panel">
+    <h2>Ваш выбор</h2>
+    <p id="factionText">Загрузка...</p>
+  </section>
+
+</main>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const faction = params.get("f");
+
+  let text = "";
+
+  if (faction === "skitalec") {
+    text = "Скитальцы — выживание, исследование и поиск артефактов.";
+  }
+
+  if (faction === "padalshik") {
+    text = "Падальщики — сила, хаос и борьба за ресурсы.";
+  }
+
+  if (faction === "gvardia") {
+    text = "Секторная Гвардия — контроль, порядок и зачистка зоны.";
+  }
+
+  document.getElementById("factionText").innerText = text;
+</script>
+
+</body>
+</html>
