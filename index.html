@@ -16,31 +16,34 @@
 
   <section class="panel">
     <h2>Объект</h2>
-    <p>Сектор-17 — закрытая зона катастрофы...</p>
-  </section>
 
-  <section class="panel">
-    <h2>Фракции</h2>
-    <ul>
-      <li>Скитальцы</li>
-      <li>Падальщики</li>
-      <li>Секторная Гвардия</li>
-    </ul>
+    <p>
+      <b>Сектор-17 — закрытая зона катастрофы.</b><br>
+      Доступ запрещён. Любое проникновение считается смертельно опасным.
+    </p>
+
+    <p>
+      После провала проекта «Резонанс» территория перестала подчиняться
+      нормальным законам физики.
+    </p>
   </section>
 
   <section class="panel">
     <h2>Выбор фракции</h2>
 
-    <button onclick="chooseFaction('Скиталец')">Скитальцы</button>
-    <button onclick="chooseFaction('Падальщик')">Падальщики</button>
-    <button onclick="chooseFaction('Гвардия')">Гвардия</button>
+    <button onclick="playSound(); goFaction('skitalec')">Скитальцы</button>
+    <p class="faction-desc">Скитальцы — выживание и исследование</p>
 
-    <p id="factionResult"></p>
+    <button onclick="playSound(); goFaction('padalshik')">Падальщики</button>
+    <p class="faction-desc">Падальщики — власть и ресурсы</p>
+
+    <button onclick="playSound(); goFaction('gvardia')">Секторная Гвардия</button>
+    <p class="faction-desc">Секторная Гвардия — контроль и зачистки</p>
+
   </section>
 
 </main>
 
 <script src="script.js"></script>
-
 </body>
 </html>
